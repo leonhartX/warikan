@@ -1,4 +1,16 @@
 machine:
-  ruby:
-    version: 2.3.0
+  services:
+    - docker
 
+dependencies:
+  pre:
+    - sudo pip install docker-compose
+  override:
+    - docker info
+    - docker build -t leonhart/warikan .
+
+test:
+  override:
+    - docker-compose -f docker-compose.ci.yml up -d
+    - docker-compose run --no-deps web rails test
+    - curl --retry 10 --retry-delay 5 -v http://localhost
