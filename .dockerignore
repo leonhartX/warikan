@@ -1,0 +1,11 @@
+.git*
+.dockeringore
+.circle.yml
+db/*.sqlite3
+db/*.sqlite3-journal
+log/*
+tmp/*
+README.rdoc
+Dockerfile
+docker-compose.yml*
+*.sublilme-*

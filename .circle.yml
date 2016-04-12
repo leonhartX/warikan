@@ -1,0 +1,4 @@
+machine:
+  ruby:
+    versoin: 2.3.0
+

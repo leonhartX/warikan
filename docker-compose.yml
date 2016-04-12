@@ -1,0 +1,28 @@
+web:
+  image: leonhart/warikan
+  volumes:
+    - ./app:/app/app
+    - ./config:/app/config
+    - ./db:/app/db
+    - ./lib:/app/lib
+    - ./public:/app/public
+    - ./test:/app/test
+    - ./vendor:/app/vendor
+  ports:
+    - "80:3000"
+  links:
+    - mysql
+    - redis
+mysql:
+  image: mysql
+  volumes:
+    - warikan_data:/var/lib/mysql
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+    MYSQL_DATABASE: app_development
+  ports:
+    - "3306:3306"
+redis:
+  image: redis
+  ports:
+    - "6379:6379"
