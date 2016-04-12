@@ -3,8 +3,6 @@ machine:
     - docker
 
 dependencies:
-  pre:
-    - sudo pip install docker-compose
   override:
     - docker info
     - docker build -t leonhart/warikan .
