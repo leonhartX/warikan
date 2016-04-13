@@ -11,12 +11,13 @@ dependencies:
     - docker build -t leonhart/warikan .
 
 test:
-  pre:
-    - sudo bash -c "echo \"bind-address = 0.0.0.0\" >>
-      /etc/mysql/my.cnf"
-    - sudo /etc/init.d/mysql restart
+  # pre:
+  #   - sudo bash -c "echo \"bind-address = 0.0.0.0\" >>
+  #     /etc/mysql/my.cnf"
+  #   - sudo /etc/init.d/mysql restart
   override:
-    - docker run -v $(pwd)/config:/app/config leonhart/warikan rails test
+    - rails test
+    # - docker run -v $(pwd)/config:/app/config leonhart/warikan rails test
 
 deployment:
   hub:
