@@ -9,7 +9,7 @@ mysql:
   image: mysql
   environment:
     MYSQL_ROOT_PASSWORD: password
-    MYSQL_DATABASE: app_test
+    MYSQL_DATABASE: app_development
   expose:
     - "3306"
 redis:

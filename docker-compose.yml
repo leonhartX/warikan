@@ -1,18 +1,18 @@
-web:
-  image: leonhart/warikan
-  volumes:
-    - ./app:/app/app
-    - ./config:/app/config
-    - ./db:/app/db
-    - ./lib:/app/lib
-    - ./public:/app/public
-    - ./test:/app/test
-    - ./vendor:/app/vendor
-  ports:
-    - "80:3000"
-  links:
-    - mysql
-    - redis
+# web:
+#   image: leonhart/warikan
+#   volumes:
+#     - ./app:/app/app
+#     - ./config:/app/config
+#     - ./db:/app/db
+#     - ./lib:/app/lib
+#     - ./public:/app/public
+#     - ./test:/app/test
+#     - ./vendor:/app/vendor
+#   ports:
+#     - "80:3000"
+#   links:
+#     - mysql
+#     - redis
 mysql:
   image: mysql
   volumes:
