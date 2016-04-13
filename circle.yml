@@ -3,6 +3,8 @@ machine:
     - docker
 
 dependencies:
+  cache_directories:
+    - "~/docker"
   override:
     - bundle install
     - docker info
@@ -10,7 +12,7 @@ dependencies:
 
 test:
   override:
-    - docker run -v ($pwd)/config:/app/config leonhart/warikan rails test
+    - docker run -v $(pwd)/config:/app/config leonhart/warikan rails test
 
 deployment:
   hub:
