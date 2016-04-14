@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   get 'contact' => 'static_pages#contact'
 
   resources :users, only: [:index, :show]
+  resources :books, only: [:create, :destroy, :edit, :update, :show]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Serve websocket cable requests in-process

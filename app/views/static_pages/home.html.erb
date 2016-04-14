@@ -1,18 +1,21 @@
 <nav>
   <% if user_signed_in? %>
-    <strong><%= link_to current_user.name, user_path(current_user.id) %></strong>
-    <%= link_to 'プロフィール変更', edit_user_registration_path %>
-    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+    <%= form_for @book, html: { class: "form-inline" } do |f| %>
+    <div class="form-group">
+      <%= f.label :title, class: "sr-only"%>
+      <div class="input-group">
+        <%= f.text_field :title, class: "form-control", placeholder: "Create a new book..." %>
+      </div>
+      <%= f.button "Create", class: "btn btn-primary" %>
+    </div>
+    <% end %>
   <% else %>
-    <%= link_to 'サインアップ', new_user_registration_path %>
-    <%= link_to 'ログイン', new_user_session_path %>
-  <div class="center jumbotron">
-    <h1>Warikan</h1>
-    <h2>
-      割り勘計算サービス	
-    </h2>
-    
-    <%= link_to "Try it now!", '#', class: "btn btn-lg btn-primary" %>
-  </div>
+    <div class="center jumbotron">
+      <h1>Warikan</h1>
+      <h2>
+        割り勘計算サービス	
+      </h2>
+      <%= link_to "Try it now!", new_user_registration_path, class: "btn btn-lg btn-primary" %>
+    </div>
   <% end %>
 </nav>
