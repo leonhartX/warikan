@@ -35,6 +35,9 @@ gem 'will_paginate', '~>3.1.0'
 gem 'bootstrap-will_paginate', '~>0.0.10'
 gem 'bootstrap-sass'
 gem 'rails-controller-testing'
+gem 'devise', '4.0.0.rc2'
+# gem 'omniauth'
+gem 'omniauth-twitter'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
