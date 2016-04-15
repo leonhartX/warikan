@@ -1,5 +1,5 @@
 <div class="bg-info">
-  <h2><%= link_to book.title, "#" %></h2>
+  <h2><%= link_to book.title, book_path(book.id) %></h2>
   <span class="total"><%= book.total %></span>
   <span class="member"><%= book.member %></span>
   <span class="timestamp">

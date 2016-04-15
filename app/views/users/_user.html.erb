@@ -1,4 +1,10 @@
-<li>
+<li id="users">
   <%= link_to user.email, user %>
   <%= user.name %>
+  <% if owner_of? @book %>
+  	<%= link_to "delete", involvement_path(@book.involvement.find_by(user_id: user.id).id), 
+  	remote: true, method: :delete, data: { confirm: "You sure?" } %>
+  <% else %>
+  	
+  <% end %>
 </li>

@@ -3,7 +3,7 @@ class OauthCallbacksController < Devise::OmniauthCallbacksController
     @user = User.from_oauth(request.env["omniauth.auth"].except("extra"))
     # debugger
     if @user.persisted?
-      flash.notice = "ログインしました！"
+      flash.notice = "You have logged in!"
       sign_in_and_redirect @user
     else
       session["devise.user_attributes"] = @user.attributes

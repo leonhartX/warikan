@@ -1,3 +1,8 @@
 <div>
-  <%= render @book %>	
+  <%= render @book %>
+  <% if owner_of? @book %>
+  	<%= render 'books/add_participant' %>
+  <% end %>
+  
+  <%= render @book.participant %>
 </div>

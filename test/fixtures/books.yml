@@ -11,3 +11,15 @@ two:
   total: 25000
   member: 3
   user: leonhart
+
+book-1:
+  title: book-1
+  total: 100
+  member: 2
+  user: lc
+
+book-2:
+  title: book-2
+  total: 200
+  member: 2
+  user: lc

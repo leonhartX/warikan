@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :authenticate_user!, only: [:create, :edit, :update, :destroy, :show]
-  before_action :correct_user, only: [:destroy]
+  before_action :correct_user, only: [:update, :destroy]
 
   def create
     @book = current_user.books.build(book_params)
@@ -12,6 +12,7 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.find_by(id: params[:id])
+    @involvement = @book.involvement.build
   end
 
   def edit

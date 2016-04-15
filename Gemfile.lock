@@ -42,7 +42,14 @@ GEM
     arel (7.0.0)
     autoprefixer-rails (6.3.6)
       execjs
+    awesome_print (1.6.1)
     bcrypt (3.1.11)
+    better_errors (2.1.1)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -88,6 +95,10 @@ GEM
       guard-compat (~> 1.2)
       minitest (>= 3.0)
     hashie (3.4.3)
+    hirb (0.7.3)
+    hirb-unicode (0.0.5)
+      hirb (~> 0.5)
+      unicode-display_width (~> 0.1.1)
     i18n (0.7.0)
     jbuilder (2.4.1)
       activesupport (>= 3.0.0, < 5.1)
@@ -143,6 +154,17 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    pry-byebug (3.3.0)
+      byebug (~> 8.0)
+      pry (~> 0.10)
+    pry-doc (0.8.0)
+      pry (~> 0.9)
+      yard (~> 0.8)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
+    pry-stack_explorer (0.4.9.2)
+      binding_of_caller (>= 0.7)
+      pry (>= 0.9.11)
     puma (3.4.0)
     rack (2.0.0.alpha)
       json
@@ -216,6 +238,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
+    unicode-display_width (0.1.1)
     warden (1.2.6)
       rack (>= 1.0)
     web-console (3.1.1)
@@ -226,20 +249,25 @@ GEM
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
     will_paginate (3.1.0)
+    yard (0.8.7.6)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  awesome_print
   bcrypt (~> 3.1.7)
+  better_errors
+  binding_of_caller
   bootstrap-sass
   bootstrap-will_paginate (~> 0.0.10)
-  byebug
   coffee-rails (~> 4.1.0)
   devise (= 4.0.0.rc2)
   faker (~> 1.4.2)
   guard
   guard-minitest
+  hirb
+  hirb-unicode
   jbuilder (~> 2.0)
   jquery-rails
   listen (~> 3.0.5)
@@ -247,6 +275,10 @@ DEPENDENCIES
   minitest-reporters
   mysql2 (>= 0.3.18, < 0.5)
   omniauth-twitter
+  pry-byebug
+  pry-doc
+  pry-rails
+  pry-stack_explorer
   puma
   rails (>= 5.0.0.beta3, < 5.1)
   rails-controller-testing

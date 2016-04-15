@@ -1,0 +1,9 @@
+<%= form_for @involvement, remote: true, html: { class: "form-inline" } do |f| %>
+  <div class="form-group">
+    <div class="input-group">
+      <%= hidden_field_tag :book_id, @involvement.book.id %>
+      <%= f.text_field :user, class: "form-control", placeholder: "Add a member..." %>
+    </div>
+    <%= f.button "Add", class: "btn btn-primary" %>
+  </div>
+<% end %>
