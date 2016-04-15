@@ -1,10 +1,11 @@
-
-<h1><%= book.title %></h1>
-<span class="total"><%= book.total %></span>
-<span class="member"><%= book.member %></span>
-<span class="timestamp">
-  Updated <%= time_ago_in_words(book.updated_at) %> ago.
-  <% if current_user?(book.user) %>
-    <%= link_to "delete", book, method: :delete, data: { confirm: "You sure?" } %>
-  <% end %>
-</span>
+<div class="bg-info">
+  <h2><%= link_to book.title, "#" %></h2>
+  <span class="total"><%= book.total %></span>
+  <span class="member"><%= book.member %></span>
+  <span class="timestamp">
+    Updated <%= time_ago_in_words(book.updated_at) %> ago.
+    <% if current_user?(book.user) %>
+      <%= link_to "delete", book, remote: true, method: :delete, data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</div>

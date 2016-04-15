@@ -9,4 +9,13 @@ class ActiveSupport::TestCase
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
+  def log_in_as(user, options = {})
+    password    = options[:password]    || 'password'
+    remember_me = options[:remember_me] || '1'
+    post new_user_session_path, params: {
+      user: { email:       user.email,
+              password:    password,
+              remember_me: remember_me }
+    }
+  end
 end

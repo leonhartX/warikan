@@ -1,29 +1,30 @@
 require 'test_helper'
 
 class BooksControllerTest < ActionDispatch::IntegrationTest
-  test "should get create" do
-    get books_create_url
-    assert_response :success
+  def setup
+    @book = books(:one)
   end
 
   test "should get show" do
-    get books_show_url
-    assert_response :success
+    get book_path @book
+    assert_redirected_to new_user_session_path
   end
 
   test "should get edit" do
-    get books_edit_url
-    assert_response :success
+    get edit_book_path @book
+    assert_redirected_to new_user_session_path
   end
 
   test "should get update" do
-    get books_update_url
-    assert_response :success
+    patch book_path @book, params: {
+      title: "hanami again"
+    }
+    assert_redirected_to new_user_session_path
   end
 
   test "should get destroy" do
-    get books_destroy_url
-    assert_response :success
+    delete book_path @book
+    assert_redirected_to new_user_session_path
   end
 
 end

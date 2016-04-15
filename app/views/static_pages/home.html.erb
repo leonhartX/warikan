@@ -1,14 +1,7 @@
 <nav>
   <% if user_signed_in? %>
-    <%= form_for @book, html: { class: "form-inline" } do |f| %>
-    <div class="form-group">
-      <%= f.label :title, class: "sr-only"%>
-      <div class="input-group">
-        <%= f.text_field :title, class: "form-control", placeholder: "Create a new book..." %>
-      </div>
-      <%= f.button "Create", class: "btn btn-primary" %>
-    </div>
-    <% end %>
+    <%= render 'books/create_form' %>
+    <%= render @books %>
   <% else %>
     <div class="center jumbotron">
       <h1>Warikan</h1>

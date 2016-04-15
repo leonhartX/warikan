@@ -5,7 +5,7 @@ class User < ApplicationRecord
     # :confirmable, :lockable,
     :timeoutable, :omniauthable, omniauth_providers: [:twitter]
 
-  validates :name, presence: true, length: { maximum: 50 }
+  validates :name, format: { with: /\A[a-zA-Z]+[\-\w\d]*\z/, message: "only allow letters and numbers" }
 
   class << self
     def from_oauth(auth)

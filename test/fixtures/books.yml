@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  title: MyString
-  total: 1
-  member: 1
+  title: hanami
+  total: 1000
+  member: 2
+  user: leonhart
 
 two:
-  title: MyString
-  total: 1
-  member: 1
+  title: travel
+  total: 25000
+  member: 3
+  user: leonhart

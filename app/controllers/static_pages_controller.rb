@@ -1,7 +1,10 @@
 class StaticPagesController < ApplicationController
   def home
-    @book = Book.new if user_signed_in?
-    # debugger
+    if user_signed_in?
+      @book = Book.new
+      @books = current_user.books
+      # debugger
+    end
   end
 
   def help

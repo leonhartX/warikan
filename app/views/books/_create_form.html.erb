@@ -1,0 +1,9 @@
+<%= form_for @book, remote: true, html: { class: "form-inline" } do |f| %>
+  <div class="form-group">
+    <%= f.label :title, class: "sr-only"%>
+    <div class="input-group">
+      <%= f.text_field :title, class: "form-control", placeholder: "Create a new book..." %>
+    </div>
+    <%= f.button "Create", class: "btn btn-primary" %>
+  </div>
+<% end %>
