@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'payments/create'
+
+  get 'payments/destroy'
+
+  get 'payments/update'
+
   get 'books/create'
 
   get 'books/show'
@@ -22,6 +28,7 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :show]
   resources :books, only: [:create, :destroy, :edit, :update, :show]
   resources :involvements, only: [:create, :destroy]
+  resources :payments, only: [:create, :destroy, :update]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   # Serve websocket cable requests in-process

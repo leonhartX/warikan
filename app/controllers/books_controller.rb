@@ -13,6 +13,7 @@ class BooksController < ApplicationController
   def show
     @book = Book.find_by(id: params[:id])
     @involvement = @book.involvement.build
+    @payment = @book.payment.build(user_id: current_user.id)
   end
 
   def edit

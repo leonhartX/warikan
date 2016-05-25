@@ -3,6 +3,8 @@
   <% if owner_of? @book %>
   	<%= render 'books/add_participant' %>
   <% end %>
+
+  <%= render 'payments/new' %>
   
   <%= render @book.participant %>
 </div>

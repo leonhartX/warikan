@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415054530) do
+ActiveRecord::Schema.define(version: 20160418082114) do
 
   create_table "books", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "title"
@@ -34,6 +34,21 @@ ActiveRecord::Schema.define(version: 20160415054530) do
   add_index "involvements", ["book_id"], name: "index_involvements_on_book_id", using: :btree
   add_index "involvements", ["user_id", "book_id"], name: "index_involvements_on_user_id_and_book_id", unique: true, using: :btree
   add_index "involvements", ["user_id"], name: "index_involvements_on_user_id", using: :btree
+
+  create_table "payments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.float    "amount",     limit: 24,             null: false
+    t.datetime "date",                              null: false
+    t.integer  "category",              default: 0, null: false
+    t.integer  "unit",                  default: 0, null: false
+    t.integer  "book_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+  end
+
+  add_index "payments", ["book_id"], name: "index_payments_on_book_id", using: :btree
+  add_index "payments", ["user_id", "book_id"], name: "index_payments_on_user_id_and_book_id", using: :btree
+  add_index "payments", ["user_id"], name: "index_payments_on_user_id", using: :btree
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                   default: "anonymous"
@@ -69,4 +84,6 @@ ActiveRecord::Schema.define(version: 20160415054530) do
   add_foreign_key "books", "users"
   add_foreign_key "involvements", "books"
   add_foreign_key "involvements", "users"
+  add_foreign_key "payments", "books"
+  add_foreign_key "payments", "users"
 end
